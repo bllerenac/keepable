@@ -31,12 +31,14 @@ const GLOBAL =  {
 };
 
 function renderListItem(note) {
-  return `<li class="content__item">
-  <div class="content__detail">
-    <h3>${note.title}</h3>
+  return `
+  <div class="note_container">
+    <h3 class="note_title">${note.title}</h3>
     <p>${note.content}</p>
-  </div>
-</li>`;
+    <button class="note_button">
+    </button>
+    <button class="note_button">delete</button>
+  </div>`;
 }
 
 function renderList() {
