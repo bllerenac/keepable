@@ -3,44 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="note">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="assets/js/color.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
     <title>Keepable</title>
   </head>
   <body>
-    <header>
-      <img src="" alt="Brand">
-      <p>Welcome to {keepable}</p>
+    <header class="flex flex--wrap">
+      <h1 class="header__brand">{keep<span class="text__gray">able</span>}</h1>
+      <p class="header__welcome">Welcome to {keepable}</p>
     </header>
     <div class="flex">
       <nav>
         <ul>
-          <li>Notes</li>
-          <li>Trash</li>
+          <li onclick="notes()" class="active">
+            <span class="logo text--bold">{&nbsp;&nbsp;}</span> 
+            Notes
+          </li>
+          <li onclick="trash()">
+            <img class="logo" src="assets/images/trash.png" alt="trash"> Trash
+          </li>
         </ul>
       </nav>
       <main>
-        <form action="">
-          <input type="text" placeholder="Title">
-          <input type="text" placeholder="Text">
-          <input type="color">
-          <input type="submit">
-        </form>
-        <div>
-          <div class="notes-container">
-            <div class="note">
+        <div class="center">
+          <form class="form" action="">
+            <input class="form--title" type="text" placeholder="The title for my new note">
+            <input class="form--text" type="text" placeholder="This is the body for the note.">
+            <div class="flex flex--space">
+              
+              <div class="tooltip">
+                <a class="tooltip-trigger" href="#"></a>
+                <div class="tooltip-content hidden">
+                  <div class="tooltip-content__arrow-up"></div>
+                  <div class="tooltip-content__body">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                  </div>
+                </div>
+              </div>
+
+              <input type="submit" value="Keep it!">
+            </div>
+          </form>
+        </div>
+          <div class="notes-container flex flex--wrap">
+            <article class="note white">
               <h1 class="note__title">title</h1>
               <p class="note__text">note</p>
-              <button>colors</button>
-              <button>delete</button>
-            </div>
-            <div class="note">
+              <div class="note__buttons flex">
+                <button><img src="assets/images/color.svg" alt=""></button>
+                <button><img src="assets/images/trash.svg" alt=""></button>
+              </div>
+            </article>
+            <article class="note yellow">
+              <h1 class="note__title">title</h1>
+              <p class="note__text">note</p>
+              <div class="note__buttons">
+                <button><img src="assets/images/color.svg" alt=""></button>
+                <button><img src="assets/images/trash.svg" alt=""></button>
+              </div>
+            </article>
+            <article class="note cyan">
               <h1 class="note__title">title 2</h1>
               <p class="note__text">note 2</p>
-              <button>colors</button>
-              <button>delete</button>
-            </div>
+              <div class="note__buttons">
+                <button><img src="assets/images/color.svg" alt=""></button>
+                <button><img src="assets/images/trash.svg" alt=""></button>
+              </div>
+            </article>
           </div>
-        </div>
       </main>
     </div>
     <script src="new_note.js"></script>

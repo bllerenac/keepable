@@ -1,0 +1,95 @@
+@import "header.css";
+@import "nav.css";
+@import "tooltip.css";
+@import "note.css";
+
+body{
+  margin: 0;
+  color: white;
+  background-color: #1D2128;
+}
+.text__gray{
+  color: #999B9E;
+}
+.text--bold{
+  font-weight: bold;
+}
+.flex{
+  display: flex;
+}
+.flex--wrap{
+  flex-flow: wrap;
+}
+.flex--space{
+  justify-content: space-between;
+}
+main{
+  border: 1px solid #D1D1D1;
+  flex-grow: 1;
+}
+.center{
+  width: 600px;
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 23px;
+}
+.form{
+  display: flex;
+  flex-flow: column;
+  padding: 20px;
+}
+.form--title{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.form--title::placeholder{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+}
+.form--text{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+.form--text::placeholder{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+.form input[type=text]{
+  border: none;
+}
+.form input[type=submit]{
+  cursor: pointer;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+  background-color: white;
+}
+
+.white{
+  background-color: white;
+}
+.yellow{
+  background-color: #FFF475;
+}
+.cyan{
+  background-color: #CBF0F8;
+}

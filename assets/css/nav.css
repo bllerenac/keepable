@@ -1,0 +1,30 @@
+nav{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  width: 280px;
+  height: inherit;
+  border: 1px solid #D1D1D1;
+}
+.logo{
+  padding: 16px 20px;
+}
+nav ul{
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+nav ul li{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+nav ul li:hover{
+  cursor: pointer;
+}
+.active{
+  background: #999B9E;
+  border-radius: 0px 25px 25px 0px;
+}

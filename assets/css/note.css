@@ -1,0 +1,38 @@
+.notes-container{
+  padding: 30px;
+  gap: 20px;
+  margin-top: 30px;
+}
+.note{
+  width: 260px;
+  height: 260px;
+  left: 20px;
+  top: 20px;
+  border-radius: 8px;
+  color: black;
+  font-family: Roboto;
+  font-style: normal;
+  padding: 20px;
+  position: relative;
+}
+.note__title{
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+.note__text{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+.note__buttons{
+  position: absolute;
+  bottom: 20px;
+}
+.note__buttons button{
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: none;
+  border-radius: 100px;
+}
