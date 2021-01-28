@@ -1,0 +1,20 @@
+header{
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  border: 1px solid #D1D1D1;
+}
+.header__brand{
+  font-size: 29px;
+  line-height: 24px;
+  margin: 0;
+  padding: 23px 30px;
+  width: 220px;
+}
+.header__welcome{
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 5px;
+  margin: 0;
+}
