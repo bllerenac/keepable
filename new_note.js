@@ -46,9 +46,6 @@ function renderList() {
   <ul class="content__list">
     ${GLOBAL.notes.map((note) => renderListItem(note)).join("")}
   </ul>
-  <footer class="footer">
-    <button class="js-button footer__button">New Expense</button>
-  </footer>
   `;
 }
 
