@@ -30,24 +30,28 @@ const GLOBAL =  {
   ],
 };
 
+let form = document.getElementById("form");
+let form_title = document.getElementById("form--title");
+let form_text = document.getElementById("form--text");
+let form_color = document.getElementById("form--color");
+
 function renderListItem(note) {
   return `
-  <div class="note_container">
-    <h3 class="note_title">${note.title}</h3>
-    <p>${note.content}</p>
-    <button class="note_button">
-    </button>
-    <button class="note_button">delete</button>
-  </div>`;
+  <article class="note">
+    <h1 class="note__title">${note.title}</h1>
+    <p class="note__text">${note.content}</p>
+    <div class="note__buttons">
+      <button><img src="assets/images/color.svg" alt=""></button>
+      <button><img src="assets/images/trash.svg" alt=""></button>
+    </div>
+  </article>`;
+  
 }
 
 function renderList() {
   GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate);
   return `
-  <h2>Notes Global</h2>
-  <ul class="content__list">
     ${GLOBAL.notes.map((note) => renderListItem(note)).join("")}
-  </ul>
   `;
 }
 
@@ -55,7 +59,7 @@ function addEventListeners() {
 }
 
 function init() {
-  const content = document.querySelector(".notes-container");
+  const content = document.querySelector(".new_notes-container");
   content.innerHTML = renderList();
   addEventListeners();
 }

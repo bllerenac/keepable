@@ -4,7 +4,8 @@
   margin-top: 30px;
 }
 .note{
-  width: 260px;
+  width: 20%;
+  min-width: 260px;
   height: 260px;
   left: 20px;
   top: 20px;
@@ -14,6 +15,7 @@
   font-style: normal;
   padding: 20px;
   position: relative;
+  background-color: #FFF475;
 }
 .note__title{
   font-weight: bold;

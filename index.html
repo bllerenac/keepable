@@ -27,13 +27,12 @@
       </nav>
       <main>
         <div class="center">
-          <form class="form" action="">
-            <input class="form--title" type="text" placeholder="The title for my new note">
-            <input class="form--text" type="text" placeholder="This is the body for the note.">
+          <form id="form" class="form" action="">
+            <input id="form--title" type="text" placeholder="The title for my new note">
+            <input id="form--text" type="text" placeholder="This is the body for the note.">
             <div class="flex flex--space">
-              
               <div class="tooltip">
-                <a class="tooltip-trigger" href="#"></a>
+                <input id="form--color" type="color" value="#999B9E" class="tooltip-trigger" href="#"></a>
                 <div class="tooltip-content hidden">
                   <div class="tooltip-content__arrow-up"></div>
                   <div class="tooltip-content__body">
@@ -42,37 +41,42 @@
                   </div>
                 </div>
               </div>
-
               <input type="submit" value="Keep it!">
             </div>
           </form>
         </div>
-          <div class="notes-container flex flex--wrap">
-            <article class="note white">
-              <h1 class="note__title">title</h1>
-              <p class="note__text">note</p>
-              <div class="note__buttons flex">
+
+        <div class="notes-container flex flex--wrap">
+          <article class="note white">
+            <h1 class="note__title">title</h1>
+            <p class="note__text">note</p>
+            <div class="note__buttons flex">
                 <button><img src="assets/images/color.svg" alt=""></button>
                 <button><img src="assets/images/trash.svg" alt=""></button>
-              </div>
-            </article>
-            <article class="note yellow">
-              <h1 class="note__title">title</h1>
-              <p class="note__text">note</p>
-              <div class="note__buttons">
-                <button><img src="assets/images/color.svg" alt=""></button>
-                <button><img src="assets/images/trash.svg" alt=""></button>
-              </div>
-            </article>
-            <article class="note cyan">
-              <h1 class="note__title">title 2</h1>
-              <p class="note__text">note 2</p>
-              <div class="note__buttons">
-                <button><img src="assets/images/color.svg" alt=""></button>
-                <button><img src="assets/images/trash.svg" alt=""></button>
-              </div>
-            </article>
-          </div>
+            </div>
+          </article>
+          <article class="note yellow">
+            <h1 class="note__title">title</h1>
+            <p class="note__text">note</p>
+            <div class="note__buttons">
+              <button><img src="assets/images/color.svg" alt=""></button>
+              <button><img src="assets/images/trash.svg" alt=""></button>
+            </div>
+          </article>
+
+          <article class="note cyan">
+            <h1 class="note__title">title 2</h1>
+            <p class="note__text">note 2</p>
+            <div class="note__buttons">
+              <button><img src="assets/images/color.svg" alt=""></button>
+              <button><img src="assets/images/trash.svg" alt=""></button>
+            </div>
+          </article>
+        </div>
+
+        <div class="new_notes-container">
+          <!--in this places enter the new notes-->
+        </div>
       </main>
     </div>
     <script src="new_note.js"></script>
