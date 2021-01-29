@@ -88,11 +88,19 @@ function new_note(){
   });
 }
 
+function addFunctionsToSidebar(){
+  let notesEl = document.getElementById("sidebar__note")
+  let trashEl = document.getElementById("sidebar__trash")
+  notesEl.onclick = notes
+  trashEl.onclick = trash
+}
+
 function addEventListeners() {
   new_note();
 }
 
 function init() {
   notes();
+  addFunctionsToSidebar()
   addEventListeners();
 }
