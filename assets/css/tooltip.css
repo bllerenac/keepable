@@ -14,56 +14,57 @@ a{
 }
 
 .tooltip-trigger{
-  color: white;
-  display: block;
-  background: #3D54FF;
-  border-radius: 8px;
-  text-align: center;
-  padding: 5px 15px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #FFFFFF;
+  border-radius: 50%;
+
   transition: 300ms background;
 }
 
 .tooltip-trigger:hover{
-  background: #3B82F5;
+  background: #999B9E;
 }
 
 .tooltip-content{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
   position: absolute;
+  Width: 155px;
+  Height: 65px;
   left: 0;
   opacity: 1;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transform: translateY(0);
   transition: 200ms 100ms opacity, 300ms 100ms transform;
-  background-color: var(--white-color);
-  border-radius: 10px;
 }
 
-.tooltip-content__body{
-  display: flex;
-  background: #333;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--white-color);
-  width: 260px;
-  flex-wrap: wrap;
-}
 
 .tooltip-content a{
   color: #666;
-    font-weight: 300;
-    display: block;
-    border-radius: 50%;
-    padding: 10px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 300ms color;
+  width: 25px;
+  height: 25px;
+  font-weight: 300;
+  display: block;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  transition: 300ms color;
 }
 
-.tooltip-content a:hover{
-  color: #eee;
+.tooltip-trigger:hover{
+  background-color: #999B9E;
 }
+  .tooltip-trigger:hover .form__icon{
+    fill: #ffffff;
+  }
 
 .hidden{
   opacity: 0;
@@ -80,7 +81,7 @@ a{
 }
 .color_circle--white {
     background: white;
-    border: solid 1px var gray;
+    border: solid 1px #999B9E;
 }
 
 .color_circle--red {
