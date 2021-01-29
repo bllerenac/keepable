@@ -38,3 +38,9 @@
   border: none;
   border-radius: 100px;
 }
+.note__buttons button:hover{
+  cursor: pointer;
+}
+.note__buttons button img{
+  pointer-events: none;
+}
