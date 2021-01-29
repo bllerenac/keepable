@@ -1,46 +1,58 @@
+window.onload = () => {
+  init()
+}
+
 const GLOBAL =  {
   notes: [
     {
       title: "This is the title",
       content: "This is the body for the note.",
-      color: "#FFFFFF",
+      color: "white",
+      trash: false,
+      date: new Date('2020-10-12')
+    },
+    {
+      title: "This is the title",
+      content: "This is the body for the note.",
+      color: "yellow",
       trash: false,
       date: new Date('2020-10-15')
     },
     {
       title: "This is the title",
       content: "This is the body for the note.",
-      color: "#FBBC04",
+      color: "cyan",
       trash: false,
       date: new Date('2020-10-16')
     },
     {
       title: "This is the title",
       content: "This is the body for the note.",
-      color: "#FFF475",
+      color: "yellow",
       trash: false,
       date: new Date('2020-10-14')
     },
     {
       title: "This is the title",
       content: "This is the body for the note.",
-      color: "#CBF0F8",
+      color: "yellow",
       trash: true,
-      date: new Date('2020-10-13')
+      date: new Date('2020-10-12')
     },
     {
       title: "This is the title",
       content: "This is the body for the note.",
-      color: "#F28B82",
+      color: "white",
       trash: false,
       date: new Date('2020-10-13')
     },
     {
       title: "This is the title",
       content: "This is the body for the note.",
-      color: "#A7FFEB",
+      color: "green",
       trash: false,
       date: new Date('2020-10-13')
+      trash: true,
     },
   ],
 };
@@ -69,8 +81,6 @@ function addEventListeners() {
 }
 
 function init() {
-  const content = document.querySelector(".notes-container");
-  content.innerHTML = renderList();
+  notes()
   addEventListeners();
 }
-init();
