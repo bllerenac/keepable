@@ -66,10 +66,32 @@ function renderList(arr) {
   `;
 }
 
+function new_note(){
+  const content = document.querySelector(".center");
+  content.addEventListener("submit", (e) => {
+    let target = content.querySelector(".form");
+    if (target == e.target) {
+      e.preventDefault();
+      GLOBAL.notes.push({
+        title: e.target.title.value,
+        content: e.target.content.value,
+        color: "yellow",
+        trash: false,
+        date: new Date(),
+      });
+      console.log("new data");
+      let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
+      arr = arr.filter(el => el.trash == true)
+      content.innerHTML = renderList(arr);
+    }
+  });
+}
+
 function addEventListeners() {
+  new_note();
 }
 
 function init() {
-  notes()
+  notes();
   addEventListeners();
 }
