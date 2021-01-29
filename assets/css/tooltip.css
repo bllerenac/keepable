@@ -1,52 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+*{
+  font-family: 'Inter', sans-serif;
+}
 a{
   text-decoration:none;
 }
+
 .tooltip{
   position: relative;
   width: 100px;
 }
+
 .tooltip-trigger{
-  width: 25px;
-  height: 25px;
-  background: #F28B82;
-  border-radius: 100px;
-  display:block;
+  color: white;
+  display: block;
+  background: #3D54FF;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px 15px;
   transition: 300ms background;
 }
+
 .tooltip-trigger:hover{
-  background: #868686;
+  background: #3B82F5;
 }
+
 .tooltip-content{
   position: absolute;
-  padding: 10px 0 0;
   left: 0;
   opacity: 1;
   transform: translateY(0);
   transition: 200ms 100ms opacity, 300ms 100ms transform;
+  background-color: var(--white-color);
+  border-radius: 10px;
 }
+
 .tooltip-content__body{
-  background: grey;
+  display: flex;
+  background: #333;
   border-radius: 5px;
-  width: 110px;
-  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--white-color);
+  width: 260px;
+  flex-wrap: wrap;
 }
+
 .tooltip-content a{
-  color: #333;
+  color: #666;
+    font-weight: 300;
+    display: block;
+    border-radius: 50%;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms color;
 }
-.tooltip-content__arrow-up {
-  width: 0; 
-  height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid grey;
-  position: absolute;
-  top: 5px;
-  left: 5px;
+
+.tooltip-content a:hover{
+  color: #eee;
 }
+
 .hidden{
   opacity: 0;
   pointer-events: none;
   transform: translateY(-10px);
   z-index: -1;
+}
+.color_circle {
+    display: block;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+.color_circle--white {
+    background: white;
+    border: solid 1px var gray;
+}
+
+.color_circle--red {
+    background: red;
+}
+
+.color_circle--mustard {
+    background: greenyellow;
+}
+
+.color_circle--yellow {
+    background: yellow;
+}
+
+.color_circle--green {
+    background: green;
+}
+
+.color_circle--hex {
+    background: peru;
+}
+
+.color_circle--light-blue {
+    background: lightblue;
+}
+
+.color_circle--blue {
+  background: blue;
+}
+
+.color_circle--purple {
+    background: purple;
+}
+
+.color_circle--pink {
+    background: pink;
 }
