@@ -66,10 +66,18 @@ function renderList(arr) {
   `;
 }
 
+function addFunctionsToSidebar(){
+  let notesEl = document.getElementById("sidebar__note")
+  let trashEl = document.getElementById("sidebar__trash")
+  notesEl.onclick = notes
+  trashEl.onclick = trash
+}
+
 function addEventListeners() {
 }
 
 function init() {
   notes()
+  addFunctionsToSidebar()
   addEventListeners();
 }
