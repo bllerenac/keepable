@@ -5,6 +5,7 @@ window.onload = () => {
 const GLOBAL =  {
   notes: [
     {
+      id: uuidv4(),
       title: "This is the title",
       content: "This is the body for the note.",
       color: "white",
@@ -12,6 +13,7 @@ const GLOBAL =  {
       date: new Date('2020-10-12')
     },
     {
+      id: uuidv4(),
       title: "This is the title",
       content: "This is the body for the note.",
       color: "yellow",
@@ -19,6 +21,7 @@ const GLOBAL =  {
       date: new Date('2020-10-12')
     },
     {
+      id: uuidv4(),
       title: "This is the title",
       content: "This is the body for the note.",
       color: "cyan",
@@ -26,6 +29,7 @@ const GLOBAL =  {
       date: new Date('2020-10-12')
     },
     {
+      id: uuidv4(),
       title: "This is the title",
       content: "This is the body for the note.",
       color: "yellow",
@@ -33,6 +37,7 @@ const GLOBAL =  {
       date: new Date('2020-10-12')
     },
     {
+      id: uuidv4(),
       title: "This is the title",
       content: "This is the body for the note.",
       color: "yellow",
@@ -40,6 +45,7 @@ const GLOBAL =  {
       date: new Date('2020-10-12')
     },
     {
+      id: uuidv4(),
       title: "This is the title",
       content: "This is the body for the note.",
       color: "cyan",
@@ -55,7 +61,7 @@ function renderListItem(note) {
               <p class="note__text">${note.content}</p>
               <div class="note__buttons">
                 <button><img src="assets/images/color.svg" alt=""></button>
-                <button><img src="assets/images/trash.svg" alt=""></button>
+                <button class="button__trash" data-id=${note.id}><img src="assets/images/trash.svg" alt=""></button>
               </div>
           </article>`;
 }
@@ -73,6 +79,7 @@ function new_note(){
     if (target == e.target) {
       e.preventDefault();
       GLOBAL.notes.push({
+        id: uuidv4(),
         title: e.target.title.value,
         content: e.target.content.value,
         color: "yellow",
@@ -97,10 +104,23 @@ function addFunctionsToSidebar(){
 
 function addEventListeners() {
   new_note();
+  addTrashButtonFunction();
+}
+
+function addTrashButtonFunction(){
+  let container = document.querySelector(".notes-container")
+  container.addEventListener("click", el =>{
+    let buttons = document.querySelectorAll(".button__trash")
+    buttons.forEach(button => {
+      if(button == el.target){
+        changeTrashStatus(button.dataset.id)
+      }
+    });
+  })
 }
 
 function init() {
-  notes();
+  notes(); //on filtes.js
   addFunctionsToSidebar()
   addEventListeners();
 }
