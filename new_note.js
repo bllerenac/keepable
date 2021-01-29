@@ -16,21 +16,21 @@ const GLOBAL =  {
       content: "This is the body for the note.",
       color: "yellow",
       trash: false,
-      date: new Date('2020-10-15')
+      date: new Date('2020-10-12')
     },
     {
       title: "This is the title",
       content: "This is the body for the note.",
       color: "cyan",
       trash: false,
-      date: new Date('2020-10-16')
+      date: new Date('2020-10-12')
     },
     {
       title: "This is the title",
       content: "This is the body for the note.",
       color: "yellow",
       trash: false,
-      date: new Date('2020-10-14')
+      date: new Date('2020-10-12')
     },
     {
       title: "This is the title",
@@ -42,45 +42,57 @@ const GLOBAL =  {
     {
       title: "This is the title",
       content: "This is the body for the note.",
-      color: "white",
-      trash: false,
-      date: new Date('2020-10-13')
-    },
-    {
-      title: "This is the title",
-      content: "This is the body for the note.",
-      color: "green",
-      trash: false,
-      date: new Date('2020-10-13')
+      color: "cyan",
       trash: true,
+      date: new Date('2020-10-12')
     },
   ],
 };
 
 function renderListItem(note) {
-  if(note.trash == false){
-  return `
-    <article class="note" style="background-color: ${note.color};">
-      <h1 class="note__title">${note.title}</h1>
-      <p class="note__text">${note.content}</p>
-      <div class="note__buttons">
-        <button ><img src="assets/images/color.svg" alt=""></button>
-        <button><img src="assets/images/trash.svg" alt=""></button>
-      </div>
-    </article>`;
-  }
+  return `<article class="note ${note.color}">
+              <h1 class="note__title">${note.title}</h1>
+              <p class="note__text">${note.content}</p>
+              <div class="note__buttons">
+                <button><img src="assets/images/color.svg" alt=""></button>
+                <button><img src="assets/images/trash.svg" alt=""></button>
+              </div>
+          </article>`;
 }
 
-function renderList() {
+function renderList(arr) {
   return `
-    ${GLOBAL.notes.map((note) => renderListItem(note)).join("")}
+    ${arr.map((note) => renderListItem(note)).join("")}
   `;
 }
 
+function new_note(){
+  const content = document.querySelector(".center");
+  content.addEventListener("submit", (e) => {
+    let target = content.querySelector(".form");
+    if (target == e.target) {
+      e.preventDefault();
+      GLOBAL.notes.push({
+        title: e.target.title.value,
+        content: e.target.content.value,
+        color: "yellow",
+        trash: false,
+        date: new Date(),
+      });
+      console.log("new data");
+      const content_n = document.querySelector(".notes-container");
+      let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
+      arr = arr.filter(el => el.trash == false)
+      content_n.innerHTML = renderList(arr);
+    }
+  });
+}
+
 function addEventListeners() {
+  new_note();
 }
 
 function init() {
-  notes()
+  notes();
   addEventListeners();
 }
