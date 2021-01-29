@@ -2,6 +2,7 @@
 @import "nav.css";
 @import "tooltip.css";
 @import "note.css";
+@import "new_note.css";
 
 body{
   margin: 0;
@@ -34,12 +35,12 @@ main{
   border-radius: 8px;
   margin-top: 23px;
 }
-.form{
+#form{
   display: flex;
   flex-flow: column;
   padding: 20px;
 }
-.form--title{
+#form--title{
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -47,7 +48,7 @@ main{
   line-height: 20px;
   margin-bottom: 10px;
 }
-.form--title::placeholder{
+#form--title::placeholder{
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -55,14 +56,14 @@ main{
   line-height: 20px;
   color: black;
 }
-.form--text{
+#form--text{
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
 }
-.form--text::placeholder{
+#form--text::placeholder{
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;

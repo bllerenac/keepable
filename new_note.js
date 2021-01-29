@@ -66,6 +66,28 @@ function renderList(arr) {
   `;
 }
 
+function new_note(){
+  const content = document.querySelector(".center");
+  content.addEventListener("submit", (e) => {
+    let target = content.querySelector(".form");
+    if (target == e.target) {
+      e.preventDefault();
+      GLOBAL.notes.push({
+        title: e.target.title.value,
+        content: e.target.content.value,
+        color: "yellow",
+        trash: false,
+        date: new Date(),
+      });
+      console.log("new data");
+      const content_n = document.querySelector(".notes-container");
+      let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
+      arr = arr.filter(el => el.trash == false)
+      content_n.innerHTML = renderList(arr);
+    }
+  });
+}
+
 function addFunctionsToSidebar(){
   let notesEl = document.getElementById("sidebar__note")
   let trashEl = document.getElementById("sidebar__trash")
@@ -74,10 +96,11 @@ function addFunctionsToSidebar(){
 }
 
 function addEventListeners() {
+  new_note();
 }
 
 function init() {
-  notes()
+  notes();
   addFunctionsToSidebar()
   addEventListeners();
 }
