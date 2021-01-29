@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="assets/js/color.js"></script>
+    <script src="assets/js/filters.js"></script>
+    <script src="new_note.js"></script>
     <link rel="stylesheet" href="assets/css/main.css">
     <title>Keepable</title>
   </head>
@@ -16,11 +18,11 @@
     <div class="flex">
       <nav>
         <ul>
-          <li onclick="notes()" class="active">
+          <li onclick="notes(this)" class="active">
             <span class="logo text--bold">{&nbsp;&nbsp;}</span> 
             Notes
           </li>
-          <li onclick="trash()">
+          <li onclick="trash(this)">
             <img class="logo" src="assets/images/trash.png" alt="trash"> Trash
           </li>
         </ul>
@@ -69,8 +71,8 @@
                     </a>
                   </div>
                 </div>
-            </div>
-
+              </div>
+              
               <input type="submit" value="Keep it!">
             </div>
           </form>
@@ -103,6 +105,5 @@
           </div>
       </main>
     </div>
-    <script src="new_note.js"></script>
   </body>
 </html>
