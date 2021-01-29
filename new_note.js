@@ -67,7 +67,7 @@ function renderList(arr) {
 }
 
 function new_note(){
-  let content = document.querySelector(".center");
+  const content = document.querySelector(".center");
   content.addEventListener("submit", (e) => {
     let target = content.querySelector(".form");
     if (target == e.target) {
@@ -80,10 +80,10 @@ function new_note(){
         date: new Date(),
       });
       console.log("new data");
-      content = document.querySelector(".notes-container");
+      const content_n = document.querySelector(".notes-container");
       let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
       arr = arr.filter(el => el.trash == false)
-      content.innerHTML = renderList(arr);
+      content_n.innerHTML = renderList(arr);
     }
   });
 }
