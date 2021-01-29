@@ -56,12 +56,14 @@ const GLOBAL =  {
 };
 
 function renderListItem(note) {
+  let img = ""
+  img = (note.trash) ? "recover" : "trash"
   return `<article class="note ${note.color}">
               <h1 class="note__title">${note.title}</h1>
               <p class="note__text">${note.content}</p>
               <div class="note__buttons">
                 <button><img src="assets/images/color.svg" alt=""></button>
-                <button class="button__trash" data-id=${note.id}><img src="assets/images/trash.svg" alt=""></button>
+                <button class="button__trash" data-id=${note.id}><img src="assets/images/${img}.svg" alt=""></button>
               </div>
           </article>`;
 }
