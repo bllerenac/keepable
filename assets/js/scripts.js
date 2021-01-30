@@ -79,16 +79,16 @@ function renderTooltip(){
       </svg>
     </div>
     <div class="tooltip-content hidden tooltip_note_postion">  
-      <a class="color_circle color_circle--white" href="#"></a>
-      <a class="color_circle color_circle--red" href="#"></a>
-      <a class="color_circle color_circle--mustard" href="#"></a>
-      <a class="color_circle color_circle--yellow" href="#"></a>
-      <a class="color_circle color_circle--green" href="#"></a>
-      <a class="color_circle color_circle--hex" href="#"></a>
-      <a class="color_circle color_circle--light-blue" href="#"></a>
-      <a class="color_circle color_circle--blue" href="#"></a>
-      <a class="color_circle color_circle--purple" href="#"></a>
-      <a class="color_circle color_circle--pink" href="#"></a>
+      <a class="color_circle color_circle--white" href="#">white</a>
+      <a class="color_circle color_circle--red" href="#">red</a>
+      <a class="color_circle color_circle--mustard" href="#">greenyellow</a>
+      <a class="color_circle color_circle--yellow" href="#">yellow</a>
+      <a class="color_circle color_circle--green" href="#">green</a>
+      <a class="color_circle color_circle--hex" href="#">peru</a>
+      <a class="color_circle color_circle--light-blue" href="#">lightblue</a>
+      <a class="color_circle color_circle--blue" href="#">blue</a>
+      <a class="color_circle color_circle--purple" href="#">purple</a>
+      <a class="color_circle color_circle--pink" href="#">pink</a>
     </div>
   `
 }
@@ -153,7 +153,7 @@ function tooltip() {
     const triggers = tooltip.querySelectorAll('.tooltip-content a');
     triggers.forEach(trigger => {
       if(trigger == e.target){
-        // console.log(trigger.textContent);
+        console.log(trigger.textContent);
       }
     })
   })
@@ -184,7 +184,9 @@ function tooltip_notes() {
       const triggers = container.querySelectorAll('.tooltip-content a');
       triggers.forEach(trigger => {
         if(trigger === e.target){
-          console.log(trigger.textContent);
+          color = trigger.textContent;
+          console.log(note)
+          note.style.backgroundColor = String(color)
         }
       })
     });
