@@ -85,6 +85,20 @@ main{
   background-color: white;
 }
 
+.with-100{
+  width: 100%;
+}
+.text-aling--center{
+  text-align: center;
+}
+.no-notes__text{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+}
+
 .white{
   background-color: white;
 }

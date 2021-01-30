@@ -97,6 +97,12 @@ function renderList(arr) {
   `;
 }
 
+function renderEmpty(){
+  return `<div class="with-100 text-aling--center">
+            <h1 class="no-notes__text">No notes to keep</h1>
+          </div>`
+}
+
 function new_note(){
   const content = document.querySelector(".center");
   content.addEventListener("submit", (e) => {
