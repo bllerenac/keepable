@@ -3,6 +3,7 @@ function notes() {
   let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
   arr = arr.filter(el => el.trash == false)
   content.innerHTML = renderList(arr);
+  tooltip_init();
   makeActive("sidebar__note")
 }
 
@@ -11,6 +12,7 @@ function trash() {
   let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
   arr = arr.filter(el => el.trash == true)
   content.innerHTML = renderList(arr);
+  tooltip_init();
   makeActive("sidebar__trash")
 }
 
