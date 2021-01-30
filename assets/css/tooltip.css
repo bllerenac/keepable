@@ -48,12 +48,13 @@ a{
 }
 
 .tooltip_note_postion{
-  top: -215%;
+  top: -210%;
 }
 
 
 .tooltip-content a{
-  color: #666;
+  color:transparent;
+  font-size: 5px;
   width: 25px;
   height: 25px;
   font-weight: 300;
