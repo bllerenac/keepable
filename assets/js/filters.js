@@ -2,10 +2,12 @@ function notes() {
   const content = document.querySelector(".notes-container");
   if (GLOBAL.notes.length == 0){
     content.innerHTML = renderEmpty();
+    tooltip_init();
   } else {
     let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
     arr = arr.filter(el => el.trash == false)
     content.innerHTML = (arr.length != 0) ? renderList(arr) : renderEmpty()
+    tooltip_init();
   }
   makeActive("sidebar__note")
 }
@@ -14,10 +16,12 @@ function trash() {
   const content = document.querySelector(".notes-container");
   if (GLOBAL.notes.length == 0){
     content.innerHTML = renderEmpty();
+    tooltip_init();
   } else {
     let arr = GLOBAL.notes.sort((a, b) => b.createdDate - a.createdDate)
     arr = arr.filter(el => el.trash == true)
     content.innerHTML = (arr.length != 0) ? renderList(arr) : renderEmpty()
+    tooltip_init();
   }
   makeActive("sidebar__trash")
 }
