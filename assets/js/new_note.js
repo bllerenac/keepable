@@ -58,11 +58,13 @@ const GLOBAL =  {
 function renderListItem(note) {
   let img = ""
   img = (note.trash) ? "recover" : "trash"
+  let hidden = el=>{ return (el==false) ? "display-none" : null}
   return `<article class="note ${note.color}">
               <h1 class="note__title">${note.title}</h1>
               <p class="note__text">${note.content}</p>
-              <div class="note__buttons">
-                <div class ="tooltip"></div>
+              <div class="note__buttons flex">
+                <div class ="tooltip ${hidden(!note.trash)}"></div>
+                <button class="button__delete ${hidden(note.trash)}" data-id=${note.id}><img src="assets/images/trash.svg" alt=""></button>
                 <button class="button__trash" data-id=${note.id}><img src="assets/images/${img}.svg" alt=""></button>
               </div>
           </article>`;
@@ -151,7 +153,7 @@ function tooltip() {
     const triggers = tooltip.querySelectorAll('.tooltip-content a');
     triggers.forEach(trigger => {
       if(trigger == e.target){
-        console.log(trigger.textContent);
+        // console.log(trigger.textContent);
       }
     })
   })
@@ -201,6 +203,18 @@ function addTrashButtonFunction(){
   })
 }
 
+function addDeleteButtonFunction(){
+  let container = document.querySelector(".notes-container")
+  container.addEventListener("click", el =>{
+    let buttons = document.querySelectorAll(".button__delete")
+    buttons.forEach(button => {
+      if(button == el.target){
+        deleteNote(button.dataset.id)
+      }
+    });
+  })
+}
+
 function tooltip_init(){
   tooltip_notes();
   const notes_container = document.querySelector('.notes-container')
@@ -208,8 +222,8 @@ function tooltip_init(){
   notes.forEach((note) => {
     const container = note.querySelector('.note__buttons');
     const content = container.querySelector('.tooltip');
-    console.log(container)
-    console.log(content)
+    // console.log(container)
+    // console.log(content)
     return content.innerHTML = renderTooltip();
   });
 }
@@ -218,6 +232,7 @@ function addEventListeners() {
   tooltip();
   new_note();
   addTrashButtonFunction();
+  addDeleteButtonFunction();
   tooltip_init();
 }
 
