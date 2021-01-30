@@ -64,7 +64,7 @@ function renderListItem(note) {
               <p class="note__text">${note.content}</p>
               <div class="note__buttons flex">
                 <div class ="tooltip ${hidden(!note.trash)}"></div>
-                <button class="button__delete ${hidden(note.trash)}" data-id=${note.id}"><img src="assets/images/trash.svg" alt=""></button>
+                <button class="button__delete ${hidden(note.trash)}" data-id=${note.id}><img src="assets/images/trash.svg" alt=""></button>
                 <button class="button__trash" data-id=${note.id}><img src="assets/images/${img}.svg" alt=""></button>
               </div>
           </article>`;
@@ -203,6 +203,18 @@ function addTrashButtonFunction(){
   })
 }
 
+function addDeleteButtonFunction(){
+  let container = document.querySelector(".notes-container")
+  container.addEventListener("click", el =>{
+    let buttons = document.querySelectorAll(".button__delete")
+    buttons.forEach(button => {
+      if(button == el.target){
+        deleteNote(button.dataset.id)
+      }
+    });
+  })
+}
+
 function tooltip_init(){
   tooltip_notes();
   const notes_container = document.querySelector('.notes-container')
@@ -220,6 +232,7 @@ function addEventListeners() {
   tooltip();
   new_note();
   addTrashButtonFunction();
+  addDeleteButtonFunction();
   tooltip_init();
 }
 
