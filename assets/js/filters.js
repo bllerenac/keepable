@@ -1,4 +1,6 @@
 function notes() {
+  let form = document.getElementById("form")
+  form.classList.remove("display-none")
   const content = document.querySelector(".notes-container");
   if (GLOBAL.notes.length == 0){
     content.innerHTML = renderEmpty();
@@ -13,6 +15,8 @@ function notes() {
 }
 
 function trash() {
+  let form = document.getElementById("form")
+  form.classList.add("display-none")
   const content = document.querySelector(".notes-container");
   if (GLOBAL.notes.length == 0){
     content.innerHTML = renderEmpty();
